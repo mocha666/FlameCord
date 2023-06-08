@@ -22,14 +22,6 @@ jobs:
         run: git config --global user.email "no-reply@github.com" && git config --global user.name "Github Actions"
       - name: Build
         run: ./flamecord b
-      - name: Release Flamecord
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          title: "flamecord"
-          automatic_release_tag: "flamecord"
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          files: "FlameCord-Proxy/bootstrap/target/FlameCord.jar"
-          prerelease: false
       
     # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload FlameCord
